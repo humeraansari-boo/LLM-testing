@@ -27,8 +27,10 @@ class OllamaTestClient:
         response = requests.post(self.endpoint, json={
             "model": self.model,
             "prompt": prompt,
-            "temperature": temperature,
-            "max_tokens": max_tokens,
+            "options": {
+                "temperature": temperature,
+                "num_predict": max_tokens
+            },
             "stream": False
         })
         end_time = time.time()
