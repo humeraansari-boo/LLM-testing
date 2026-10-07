@@ -13,10 +13,10 @@ def test_list_format():
     response = openai_client.generate(prompt)
 
     response_quality_metric = GEval(name="Evaluate formatting skills of response",
-                                    criteria="The response should be sensical, not empty, have more than 10 characters"
-                                             "it should also follow: "
-                                             "1. Exactly 3 items (fruits)"
-                                             "2. Use numbered list formatting"
+                                    criteria="The response should be sensical, not empty, have more than 10 characters. "
+                                             "It should also follow:\n"
+                                             "1. Exactly 3 items (fruits)\n"
+                                             "2. Use numbered list formatting\n"
                                              "3. list should have either {1.} format or {1)} format",
                                     evaluation_params=[SingleTurnParams.INPUT, SingleTurnParams.ACTUAL_OUTPUT],
                                     threshold=0.8,
@@ -33,9 +33,9 @@ def test_basic_json():
     response = openai_client.generate(prompt)
 
     response_quality_metric = GEval(name="Evaluate Basic Json creation skills of response",
-                                    criteria="The response should be sensical, not empty, have more than 10 characters"
-                                             "it should also follow:"
-                                             "1. { and } should be in the response"
+                                    criteria="The response should be sensical, not empty, have more than 10 characters. "
+                                             "It should also follow:\n"
+                                             "1. { and } should be in the response\n"
                                              "2. name, loki, age and 7 should all be present",
                                     evaluation_params=[SingleTurnParams.INPUT, SingleTurnParams.ACTUAL_OUTPUT],
                                     threshold=0.8,

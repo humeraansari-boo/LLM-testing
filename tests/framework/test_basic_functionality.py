@@ -29,7 +29,7 @@ def test_instruction_following():
     test_case = LLMTestCase(input=prompt,actual_output=response["text"])
 
     response_quality_metric = GEval(name="Evaluate instruction quality",
-                                    criteria="Check if the response correctly names 3 different colors. The response should be sensical, not empty, have more than 10 characters and be appropriate greeting response",
+                                    criteria="Check if the response names exactly 3 different colors and contains only the list, with no extra explanation",
                                     evaluation_params=[SingleTurnParams.INPUT, SingleTurnParams.ACTUAL_OUTPUT],
                                     threshold=0.7,
                                     model=evalution_model
