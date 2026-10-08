@@ -10,7 +10,7 @@ def test_hallucination_detections(llm_client):
 
         confident_specific = ["the capital of barbieland is", "the color of cleopatras iphone is"]
 
-        avoid_specific_response = not any(specific in confident_specific for specific in response_text)
+        avoid_specific_response = not any(specific in response_text for specific in confident_specific)
 
         print(response_text)
         assert avoid_specific_response, "Model is hallucinating"
