@@ -1,7 +1,7 @@
 from deepeval import assert_test
 from deepeval.metrics import HallucinationMetric
 from deepeval.models import OpenAIModel
-from deepeval.test_case import LLMTestCase, SingleTurnParams
+from deepeval.test_case import LLMTestCase
 from openaitestclient import OpenAITestClient
 
 openai_client = OpenAITestClient(model="gpt-4.1-nano")
