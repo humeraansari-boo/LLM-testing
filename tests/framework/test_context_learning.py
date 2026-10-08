@@ -16,13 +16,13 @@ def test_logical_consistency():
         response2 = openai_client.generate(q2)
 
         response_quality_metric = GEval(name="Evaluate logical consistency",
-                                        criteria="Evaluate the logical consistency of both the responses:"
-                                                 "1. make sure they are both factually correct and consistent"
-                                                 "2. both should address same underlying concept"
-                                                 "3. no condradictory information should be present"
-                                                 "4. differently phrased responses is okay"
+                                        criteria="Evaluate the logical consistency of both the responses:\n"
+                                                 "1. make sure they are both factually correct and consistent\n"
+                                                 "2. both should address same underlying concept\n"
+                                                 "3. no contradictory information should be present\n"
+                                                 "4. differently phrased responses is okay\n"
                                                  "Award high scores to the responses only when both the responses "
-                                                 "are factually aligned  ",
+                                                 "are factually aligned",
                                         evaluation_params=[SingleTurnParams.INPUT, SingleTurnParams.ACTUAL_OUTPUT],
                                         threshold=0.7,
                                         model=evalution_model
