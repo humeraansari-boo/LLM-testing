@@ -1,5 +1,3 @@
-from tokenize import generate_tokens
-
 import openai
 import time
 
